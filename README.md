@@ -1,7 +1,7 @@
-# ng-recaptcha3
+# react-google-recaptcha3
 React service for Google reCAPTCHA 3
 
-See [Demo](https://stackblitz.com/edit/react-rdqqde?file=src/App.js)
+See [Demo](https://stackblitz.com/edit/react-google-recaptcha3?file=src/App.js)
 
 # Installation
 
@@ -65,13 +65,12 @@ On form submit generate recaptcha token (it will be checked in backend) using *s
 
 Execute `getToken` with action name. See more [here](https://developers.google.com/recaptcha/docs/v3#actions)
 ``` 
-ReactRecaptcha3.getToken().getToken({ action: 'homepage' })
+ReactRecaptcha3.getToken({ action: 'homepage' })
 ``` 
 
 Destroy recaptcha 
 ```
   ReactRecaptcha3.destroy()
-}
 ```
 
 ## Backend
