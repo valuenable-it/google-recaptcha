@@ -1,0 +1,20 @@
+{
+  "name": "react-google-recaptcha3",
+  "version": "1.0.1",
+  "author": {
+    "name": "Armen Stepanyan"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "recaptcha3",
+    "react-recaptcha",
+    "google-recaptcha"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/armenstepanyan/react-google-recaptcha3"
+  },
+  "description": "React service for google recptcha3",
+  "main": "react-google-recaptcha3.js"
+}

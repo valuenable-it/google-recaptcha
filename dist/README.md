@@ -52,10 +52,7 @@ On form submit generate recaptcha token (it will be checked in backend) using *s
 
  const handleSubmit = () => {
     ReactRecaptcha3.getToken().then(token => {
-      console.log(token)
-      // send token with form data
-      // dataToSend.token = token
-      // fetch(url, { method: 'POST', body: JSON.stringify(dataToSend) })
+      console.log(resp)
     }, error => {
       // handle error here
       console.log(error)      

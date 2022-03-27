@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactRecaptcha3 from "./lib/react-google-recaptcha3";
+import React, { useEffect, useState } from "react"
+
 
 function App() {
+
+  const [token, setToken] = useState("");
+  useEffect(() => {
+    ReactRecaptcha3.init("6LedAJEUAAAAAPttxeFNp6ZtAvKGI8D9gESE-hl3").then(status => {
+      console.log(status)
+    })
+
+  }, [])
+
+  const submit = () => {
+    ReactRecaptcha3.getToken().then(resp => {
+      console.log(resp);
+      setToken(resp)
+    }, error => {
+      console.log(error)
+    })
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <h1>
+        React recaptcha3
+      </h1>
+      <div>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <input type="text" />
+          <button onClick={submit}>
+            Submit
+          </button>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div>
+          Token is <b>{token}</b>
+        </div>
+      </div>
     </div>
   );
 }
