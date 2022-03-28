@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-require("core-js/modules/es.promise.js");
-
 function getRecaptcha3() {
   const data = {
     baseUrl: 'https://www.google.com/recaptcha/api.js',
