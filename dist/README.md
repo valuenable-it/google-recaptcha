@@ -108,7 +108,7 @@ $recaptchaToken = isset($_POST['recaptchaToken']) ? $_POST['recaptchaToken'] : f
   $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$recaptchaToken."&remoteip=".$userIp);
   
   if($response.success == false){
-              //Do something with error
+       //Do something with error
               
   } else {
     // reCaptchaToken is valid you can continue with the rest of your code

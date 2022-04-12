@@ -35,6 +35,14 @@ function App() {
         <div>
           Token is <b>{token}</b>
         </div>
+        <p>
+        <button onClick={() => ReactRecaptcha3.init("6LedAJEUAAAAAPttxeFNp6ZtAvKGI8D9gESE-hl3")}>
+            Init again
+          </button> &nbsp;
+          <button onClick={() => ReactRecaptcha3.destroy()}>
+            Destroy
+          </button>
+        </p>
       </div>
     </div>
   );

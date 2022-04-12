@@ -15,7 +15,7 @@ function getRecaptcha3() {
   };
   return {
     init: siteKey => {
-      window['ngRecaptcha3Loaded'] = () => {
+      window['reactRecaptcha3Loaded'] = () => {
         data.isLoaded = true;
         data.isPending = false;
       };
@@ -30,7 +30,7 @@ function getRecaptcha3() {
           data.siteKey = siteKey;
           const script = document.createElement('script');
           script.innerHTML = '';
-          script.src = data.baseUrl + "?render=".concat(data.siteKey, "&onload=ngRecaptcha3Loaded");
+          script.src = data.baseUrl + "?render=".concat(data.siteKey, "&onload=reactRecaptcha3Loaded");
           script.id = "recapthcha-".concat(data.scriptId);
           script.async = true;
           script.defer = true;
@@ -43,13 +43,13 @@ function getRecaptcha3() {
             reject('error');
           };
 
-          document.head.appendChild(script);
+          (document.head || document.boby).appendChild(script);
         }
       });
     },
     getToken: action => {
       try {
-        return window['grecaptcha'].execute(data.siteKey, action);
+        return window['grecaptcha'] ? window['grecaptcha'].execute(data.siteKey, action) : Promise.reject("grecaptcha is not initialized: Use ReactRecaptcha3.init(...)");
       } catch (e) {
         return new Promise((resolve, reject) => {
           reject(e);
@@ -69,6 +69,8 @@ function getRecaptcha3() {
       if (badge) {
         badge.remove();
       }
+
+      window['grecaptcha'] = undefined;
     }
   };
 }
