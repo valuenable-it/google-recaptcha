@@ -1,6 +1,6 @@
 function getRecaptcha3() {
     const data = {
-        baseUrl: 'https://www.google.com/recaptcha/api.js',
+        baseUrl: 'https://www.recaptcha.net/recaptcha/api.js',
         siteKey: '',
         isLoaded: false,
         isPending: false,
